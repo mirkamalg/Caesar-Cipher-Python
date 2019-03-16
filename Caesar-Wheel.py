@@ -1,5 +1,5 @@
-alph = 'UBbAdCcDeE fFgGhHiIkJjK?lLmMNnoOpPqrQRsStWuavVwTxZyYzX,.:;\!/[]{}!#@$%^(&*)-_=+`~)UBbUBbUBbUBbUBbUBbUBbUBbUBb'
-                                             #alph - da sonda tekrarlanan UBb Index error almayaq deyedir.
+alph = 'UBbAdCcDeE fFgGhHiIkJjK?lLmMNnoOpPqrQRsStWuavVwTxZyYzX,.:;\!/[]{}!#@$%^(&*)-_=+`~)                               '
+                                             #alph - da sondaki boshluqlar error almayaq deyedir.
 def enc(alph, text, key, encrypted):
     print('Shifrelenir...')
     for x in text:
@@ -39,7 +39,7 @@ while True:
     *********************************************
     """)
 
-    f = input('Sech(1/2): ')
+    f = input('Sech(1/2/3): ')
 
     if f == '1':
         text = input('Shifrelenecek metn: ')
@@ -53,7 +53,7 @@ while True:
     elif f == '2':
         text = input('Shifresi achilacaq metn: ')
         try:
-            key = int(input('Shifreleme acharini girin(Yazinin shifrelendiyi achar)'))
+            key = int(input('Shifreleme acharini girin(Yazinin shifrelendiyi achar): '))
         except ValueError:
             print('Eded girin!')
             continue
