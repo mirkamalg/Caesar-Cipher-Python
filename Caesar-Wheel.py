@@ -6,12 +6,9 @@ def enc(alph, text, key, encrypted):
         if x in alph:
             old_ind = alph.index(x)
             new_ind = old_ind + key
-            try:
-                y = alph[new_ind]
-            except IndexError:
-                encrypted = ''
-                print('Achar chox boyukdur! Daha kichik achar girin!')
-                break
+            if new_ind >= len(alph):
+                new_ind = new_ind % len(alph) 
+            y = alph[new_ind]
             encrypted += y
         else:
             encrypted += x
@@ -23,6 +20,8 @@ def dec(alph, text, key, decrypted):
     for x in text:
         if x in alph:
             old_ind = alph.index(x)
+            if key > len(alph):
+                key = key % len(alph)
             new_ind = old_ind - key
             y = alph[new_ind]
             decrypted += y
